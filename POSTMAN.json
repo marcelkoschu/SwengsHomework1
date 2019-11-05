@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "a61925f8-2aca-499d-bfca-e4964c77e575",
+		"name": "COMPUTERS DJANGO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET All Computers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/countries",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT Computer SIMPLE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"vendor\": \"Apple\",\n\"model\" : \"MacBookPro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/computers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"computers",
+						""
+					]
+				},
+				"description": "This insert specify only the vendor & model. other fields are optional, see \"INSERT Computer DETAILED\" for more informations."
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT Computer DETAILED",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"vendor\": \"Apple\",\n\"model\" : \"MacBookPro\",\n\"build_date\" : \"2019-11-05\",\n\"storage_capacity_GB\" : 512,\n\"isEnterpriseModel\" : \"True\",\n\"price\" : 3500.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/computers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"computers",
+						""
+					]
+				},
+				"description": "With additional informations"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Computer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"vendor\": \"HP\",\n\t\"model\":\"NewChangedModel\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/computers/1/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"computers",
+						"1",
+						""
+					]
+				},
+				"description": "Vendor must be in the \"Choices\" List - this was intended. Non-existing vendors are not allowed."
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Computer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/computers/1/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"computers",
+						"1",
+						""
+					]
+				},
+				"description": "Deletes a computers. id must be specified. If the response is 204, change the id to an exisiting one."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

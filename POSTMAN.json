@@ -11,7 +11,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8000/countries",
+					"raw": "localhost:8000/computers",
 					"host": [
 						"localhost"
 					],

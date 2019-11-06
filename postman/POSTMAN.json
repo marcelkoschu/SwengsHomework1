@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a61925f8-2aca-499d-bfca-e4964c77e575",
+		"_postman_id": "c8852dde-69f0-4ad6-a320-c5d04bc6313c",
 		"name": "COMPUTERS DJANGO",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -18,6 +18,26 @@
 					"port": "8000",
 					"path": [
 						"computers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ONE Computer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/computers/3/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"computers",
+						"3",
+						""
 					]
 				}
 			},
